@@ -24,6 +24,9 @@ app.use(helmet());
 
 const urlRoute = require('./route/urls');
 
+app.use("/", (req,res) => {
+    res.send("Kindly use the correct url address via POSTMAN. Details of which can be found at https://github.com/HPsisodia/urlShortner")
+})
 
 app.use("/", urlRoute);
 
