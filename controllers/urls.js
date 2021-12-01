@@ -14,11 +14,13 @@ exports.shortUrl = async (req,res) =>{
         let base_url = process.env.BASE_URL || 'http://localhost:3000/'
         let {id, url} = req.body;
 
+        console.log(url);
+
         if(id == undefined || id == null){
             id = nanoid()
         }
         if(url == undefined || url == null){
-            res.status(statusCode.nocontent).send("Please enter a URL");
+            return res.status(statusCode.bad).send("Please enter a URL");
         }
 
        
