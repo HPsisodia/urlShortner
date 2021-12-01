@@ -17,7 +17,7 @@ exports.shortUrl = async (req,res) =>{
         if(id == undefined || id == null){
             id = nanoid()
         }
-        if(!url){
+        if(url == undefined || url == null){
             res.status(statusCode.nocontent).send("Please enter a URL");
         }
 
